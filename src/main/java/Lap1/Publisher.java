@@ -1,4 +1,4 @@
-package Lap1.Book;
+package Lap1;
 
 public class Publisher {
     private String namepublisher;  // название издательство
@@ -37,4 +37,5 @@ public class Publisher {
         System.out.println(namepublisher+" , "+city);
    }
 }
+
 

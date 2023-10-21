@@ -1,4 +1,4 @@
-package Lab1.Country;
+package Lap1;
 
 class Country {
     private String countrename; // название страны
@@ -98,6 +98,7 @@ class Country {
         }else{
             System.out.println("");
         }
+
 
 
         }
