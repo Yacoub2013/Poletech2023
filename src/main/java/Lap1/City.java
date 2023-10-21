@@ -1,36 +1,36 @@
 package Lap1;
 
 class Country {
-    private String countrename; // название страны
+    private String countryName; // название страны
     private float square; // площадь страны
-    private float populationcity;  // население
+    private float populationCity;  // население
     private String capital;  // название столицы
-    private float populationcapital; // население столицы
+    private float populationCapital; // население столицы
 
 
-    public Country(String countrename, float square, float populationcity, String capital, float populationcapital) {
-        setCountrename(countrename);
+    public Country(String countryName, float square, float populationCity, String capital, float populationCapital) {
+        setCountryName(countryName);
         setSquare(square);
-        setPopulationcity(populationcity);
+        setPopulationCity(populationCity);
         setCapital(capital);
-        setPopulationcapital(populationcapital);
+        setPopulationCapital(populationCapital);
     }
 
-    public Country(String countrename, float square, float populationcity) {
-        setCountrename(countrename);
+    public Country(String countryName, float square, float populationCity) {
+        setCountryName(countryName);
         setSquare(square);
-        setPopulationcity(populationcity);
+        setPopulationCity(populationCity);
     }
 
-    public String getCountrename() {
-        return countrename;
+    public String getCountryName() {
+        return countryName;
     }
 
-    public void setCountrename(String countrename) {
-        if (countrename.isEmpty()) {
+    public void setCountryName(String countryName) {
+        if (countryName.isEmpty()) {
             throw new IllegalArgumentException("Введите коректное название страны");
         } else {
-            this.countrename = countrename;
+            this.countryName = countryName;
         }
     }
 
@@ -47,15 +47,15 @@ class Country {
     }
 
 
-    public float getPopulationcity() {
-        return populationcity;
+    public float getPopulationCity() {
+        return populationCity;
     }
 
-    public void setPopulationcity(float populationcity) {
-        if (populationcity <= 0) {
+    public void setPopulationCity(float populationCity) {
+        if (populationCity <= 0) {
             throw new IllegalArgumentException("Введите коректные данные населения");
         } else {
-            this.populationcity = populationcity;
+            this.populationCity = populationCity;
         }
     }
 
@@ -72,29 +72,29 @@ class Country {
         }
     }
 
-    public float getPopulationcapital() {
-        return populationcapital;
+    public float getPopulationCapital() {
+        return populationCapital;
     }
 
-    public void setPopulationcapital(float populationcapital) {
-        if (populationcapital <= 0) {
+    public void setPopulationCapital(float populationCapital) {
+        if (populationCapital <= 0) {
             throw new IllegalArgumentException("Введите коректные данные населения столицы");
         } else {
-            this.populationcapital = populationcapital;
+            this.populationCapital = populationCapital;
         }
     }
 
     public void print() {
-        System.out.print(countrename + ",");
+        System.out.print(countryName + ",");
         System.out.print(square + " млн.кв.км" + ",");
-        System.out.print(populationcity + " млн.чел" + ",");
+        System.out.print(populationCity + " млн.чел" + ",");
         if(capital!=null) {
             System.out.print(capital + ",");
         }else{
             System.out.print("");
         }
         if(capital!=null) {
-            System.out.println(populationcapital + " млн.чел");
+            System.out.println(populationCapital + " млн.чел");
         }else{
             System.out.println("");
         }

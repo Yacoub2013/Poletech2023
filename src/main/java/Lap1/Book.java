@@ -3,49 +3,50 @@ package Lap1;
 import java.util.Arrays;
 
 public class Book {
-    private String namebook; // название книги
-    private Publisher namepublisher; // ссылка на экземляр издательство
+    private String nameBook; // название книги
+    private Publisher namePublisher; // ссылка на экземляр издательство
     private int year; // год издания
-    private String author[]; // автор книги
+    private String[] author; // автор книги
 
 
     public String getNamebook() {
-        return namebook;
+        return nameBook;
     }
 
-    public Book(String namebook, int year, Publisher namepublisher) {
-        this.namebook = namebook;
-        this.namepublisher = namepublisher;
-        this.year = year;
+    public Book(String nameBook, Publisher namePublisher, int year) {
+        setNameBook(nameBook);
+        setNamePublisher(namePublisher);
+        setYear(year);
+
 
     }
 
-    public Book(String namebook, String[] author, int year, Publisher namepublisher) {
-        this.namebook = namebook;
-        this.namepublisher = namepublisher;
-        this.year = year;
-        this.author = author;
+    public Book(String[] author,String nameBook, Publisher namePublisher, int year) {
+        setNameBook(nameBook);
+        setNamePublisher(namePublisher);
+        setYear(year);
+        setAuthor(author);
     }
 
 
-    public void setNamebook(String namebook) {
-        if (namebook.isEmpty()) {
+    public void setNameBook(String nameBook) {
+        if (nameBook.isEmpty()) {
             throw new IllegalArgumentException("Напишите название книги");
         } else {
-            this.namebook = namebook;
+            this.nameBook = nameBook;
 
         }
     }
 
-    public Publisher getNamepublisher() {
-        return namepublisher;
+    public Publisher getNamePublisher() {
+        return namePublisher;
     }
 
-    public void setNamepublisher(Publisher namepublisher) {
-        if (namepublisher == null) {
+    public void setNamePublisher(Publisher namePublisher) {
+        if (namePublisher == null) {
             throw new IllegalArgumentException("Укажите название издательство!");
         } else {
-            this.namepublisher = namepublisher;
+            this.namePublisher = namePublisher;
         }
     }
 
@@ -96,25 +97,29 @@ public class Book {
     }
 
     public void print() {
-        System.out.print(namebook);
-        System.out.print(namepublisher);
-        System.out.print(year);
-        namepublisher.print();
         if (author != null) {
             System.out.print("");
-            for (String author : author) {
-                System.out.print(author);
+            for (String authors :author) {
+                System.out.print(authors);
             }
         } else {
             System.out.print("");
 
         }
 
+        System.out.print(nameBook+ ", ");
+        namePublisher.print();
+
+        System.out.println(year+".");
+
+
+
+
     }
 
-    public static void printALL(Book[] booklist) {
-        if (booklist != null) {
-            for (Book book : booklist) {
+    public static void printALL(Book[] bookList) {
+        if (bookList != null) {
+            for (Book book : bookList) {
                 if (book != null) {
                     book.print();
                 }
@@ -125,15 +130,17 @@ public class Book {
         public static void main (String[]args){
             Publisher prospeck = new Publisher("Проспект", "Москва");
             Publisher piter = new Publisher("Пиер", "Санкт-Петербург");
-            Publisher bhw = new Publisher("БХВ", "Санкт-Петербург");
+            Publisher bhw = new Publisher("БХВ", "Санкт-Петебург");
             Publisher dialectika = new Publisher("Диалектика", "Киев");
 
+
+
             Book[] booklist = new Book[5];
-            booklist[0] = new Book("Computer Science: основы прогроммирования на Java, ООП, алгоритмы структуру данных"+ new String[]{"Седжевик Роберт","Уэйн Кевин"}, 2018, piter);
-            booklist[1] = new Book("Разработка требований к программному обеспечению, 3-ое издание, дополненное"+ new String[]{"Вингрерс Карл"}, 2019, bhw);
-            booklist[2] = new Book("Java. Полное руководство, 10-ое издание"+ new String[]{"Гербердт Шилдт"}, 2018, dialectika);
-            booklist[3] = new Book("C/C++. Процедурное программирование"+new String[]{"Полубенцева М.И."}, 2017, bhw);
-            booklist[4] = new Book("Конституция РФ", 2020, prospeck);
+            booklist[0] = new Book(new String[]{"Седжевик Роберт, ","Уэйн Кевин,"},"Computer Science: основы прогроммирования на Java, ООП, алгоритмы структуру данных", piter,2018);
+            booklist[1] = new Book(new String[]{"Вингрерс Карл,"},"Разработка требований к программному обеспечению, 3-ое издание, дополненное",  bhw, 2019);
+            booklist[2] = new Book(new String[]{"Гербердт Шилдт,"},"Java. Полное руководство, 10-ое издание",  dialectika,2018 );
+            booklist[3] = new Book(new String[]{"Полубенцева М.И.,"},"C/C++. Процедурное программирование",bhw, 2017 );
+            booklist[4] = new Book("Конституция РФ",prospeck, 2020);
             printALL(booklist);
 
         }

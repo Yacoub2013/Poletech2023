@@ -1,23 +1,24 @@
 package Lap1;
 
 public class Publisher {
-    private String namepublisher;  // название издательство
+    private String namePublisher;  // название издательство
     private String city; // город
 
-    public Publisher(String namepublisher, String city) {
-        this.namepublisher = namepublisher;
-        this.city = city;
+    public Publisher(String namePublisher, String city) {
+        setNamepublisher(namePublisher);
+        setCity(city);
+
     }
 
-    public String getNamepublisher() {
-        return namepublisher;
+    public String getNamePublisher() {
+        return namePublisher;
     }
 
-    public void setNamepublisher(String namepublisher) {
-        if(namepublisher.isBlank()){
+    public void setNamepublisher(String namePublisher) {
+        if(namePublisher.isBlank()){
             throw new IllegalArgumentException("Укажите название издательство");
         }else{
-            this.namepublisher = namepublisher;
+            this.namePublisher = namePublisher;
         }
     }
 
@@ -34,7 +35,7 @@ public class Publisher {
 
    }
    public void print(){
-        System.out.println(namepublisher+" , "+city);
+        System.out.print(namePublisher+" , "+city+",");
    }
 }
 
