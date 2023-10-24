@@ -142,6 +142,10 @@ public class Book {
             booklist[3] = new Book(new String[]{"Полубенцева М.И.,"},"C/C++. Процедурное программирование",bhw, 2017 );
             booklist[4] = new Book("Конституция РФ",prospeck, 2020);
             printALL(booklist);
+            System.out.println();
+
+            bhw.setCity("Санкт-Петербург");
+            printALL(booklist);
 
         }
     }
